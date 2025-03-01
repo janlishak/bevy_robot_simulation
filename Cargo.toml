@@ -5,8 +5,13 @@ edition = "2021"
 
 [dependencies]
 bevy = "0.15.3"
-bevy_rapier3d = { version = "*", features = [ "simd-nightly", "debug-render-3d", "parallel"] }
+bevy_rapier3d = { version = "*", features = [ "simd-nightly", "debug-render-3d" ] }
+bevy_spectator = "0.7.0"
+iyes_perf_ui = "0.4.0"
+rand = "0.9.0"
 
-# Enable a large amount of optimization in the dev profile for dependencies.
+[patch.crates-io]
+bevy_spectator = { path = "./bevy_spectator_patched" }
+
 [profile.dev.package."*"]
 opt-level = 3

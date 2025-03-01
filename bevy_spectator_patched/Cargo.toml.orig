@@ -1,0 +1,34 @@
+[package]
+name = "bevy_spectator"
+description = "A spectator camera plugin for Bevy"
+version = "0.7.0"
+edition = "2021"
+authors = ["JonahPlusPlus <33059163+JonahPlusPlus@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+documentation = "https://docs.rs/bevy_spectator"
+homepage = "https://github.com/JonahPlusPlus/bevy_spectator"
+repository = "https://github.com/JonahPlusPlus/bevy_spectator"
+include = ["/src", "/tests", "/examples", "/LICENSE*"]
+
+[dependencies]
+bevy = { version = "0.15", default-features = false, features = [
+  "bevy_window",
+] }
+
+[dev-dependencies]
+bevy = { version = "0.15", default-features = false, features = [
+  "bevy_asset",
+  "bevy_core_pipeline",
+  "bevy_pbr",
+  "bevy_render",
+  "bevy_sprite",
+  "bevy_window",
+  "x11",
+  "ktx2",
+  "zstd",
+  "tonemapping_luts",
+] }
+
+[features]
+default = ["init"]
+init = []          # Enables automatically choosing a camera
